@@ -1,0 +1,5 @@
+kafka:
+  caRootLocation: certs//kafka-ca-root.crt
+  certLocation: certs//kafka-client.crtt
+  keyLocation: certs//kafka-client.pem
+login: alisa

@@ -1,0 +1,70 @@
+2023-11-12 21:54:35 [info     ] ====================================================================================================
+2023-11-12 21:54:35 [info     ] Start test should_create_user()
+2023-11-12 21:54:35 [info     ] ----------------------------------------------------------------------------------------------------
+2023-11-12 21:54:35 [info     ] Create random user from csv file: user={"username": "Plaksa", "email": "cat@gmail.ru", "password": "eat"}
+2023-11-12 21:54:35 [info     ] - Step 1: Create user:         user={"username": "Plaksa", "email": "cat@gmail.ru", "password": "eat"}
+2023-11-12 21:54:36 [info     ] Send POST request:             request_url=https://petstore.swagger.io/v2/user
+2023-11-12 21:54:36 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '66'}
+2023-11-12 21:54:36 [info     ] With body:                     body={"username": "Plaksa", "email": "cat@gmail.ru", "password": "eat"}
+2023-11-12 21:54:36 [info     ] Response status code:          status_code=200
+2023-11-12 21:54:36 [info     ] Response body:                 response_body={'code': 200, 'type': 'unknown', 'message': '9223372036854760478'}
+2023-11-12 21:54:36 [info     ] - Step 2: Check that can get created user:  username=Plaksa
+2023-11-12 21:54:37 [info     ] Send GET request:              request_url=https://petstore.swagger.io/v2/user/Plaksa
+2023-11-12 21:54:37 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2023-11-12 21:54:37 [info     ] With body:                     body=None
+2023-11-12 21:54:37 [info     ] Response status code:          status_code=200
+2023-11-12 21:54:37 [info     ] Response body:                 response_body={'id': 9223372036854759739, 'username': 'Plaksa', 'email': 'cat@gmail.ru', 'password': 'eat', 'userStatus': 0}
+2023-11-12 21:54:37 [info     ] ====================================================================================================
+2023-11-12 21:54:37 [info     ] Start test should_get_error_when_not_found_user()
+2023-11-12 21:54:37 [info     ] ----------------------------------------------------------------------------------------------------
+2023-11-12 21:54:37 [info     ] - Check that cannot get non exist user: username=Jason
+2023-11-12 21:54:37 [info     ] Send GET request:              request_url=https://petstore.swagger.io/v2/user/Jason
+2023-11-12 21:54:37 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2023-11-12 21:54:37 [info     ] With body:                     body=None
+2023-11-12 21:54:37 [info     ] Response status code:          status_code=404
+2023-11-12 21:54:37 [info     ] Response body:                 response_body={'code': 1, 'type': 'error', 'message': 'User not found'}
+2023-11-12 21:54:37 [info     ] ====================================================================================================
+2023-11-12 21:54:37 [info     ] Start test should_delete_user()
+2023-11-12 21:54:37 [info     ] ----------------------------------------------------------------------------------------------------
+2023-11-12 21:54:37 [info     ] Create random user from csv file: user={"username": "MMayers", "email": "fromhellwithlove@gmail.com", "password": "311021"}
+2023-11-12 21:54:37 [info     ] - Step 1: Create user:         user={"username": "MMayers", "email": "fromhellwithlove@gmail.com", "password": "311021"}
+2023-11-12 21:54:38 [info     ] Send POST request:             request_url=https://petstore.swagger.io/v2/user
+2023-11-12 21:54:38 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '84'}
+2023-11-12 21:54:38 [info     ] With body:                     body={"username": "MMayers", "email": "fromhellwithlove@gmail.com", "password": "311021"}
+2023-11-12 21:54:38 [info     ] Response status code:          status_code=200
+2023-11-12 21:54:38 [info     ] Response body:                 response_body={'code': 200, 'type': 'unknown', 'message': '9223372036854760479'}
+2023-11-12 21:54:38 [info     ] - Step 2: Delete user:         username=MMayers
+2023-11-12 21:54:38 [info     ] Send DELETE request:           request_url=https://petstore.swagger.io/v2/user/MMayers
+2023-11-12 21:54:38 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'}
+2023-11-12 21:54:38 [info     ] With body:                     body=None
+2023-11-12 21:54:38 [info     ] Response status code:          status_code=200
+2023-11-12 21:54:38 [info     ] Response body:                 response_body={'code': 200, 'type': 'unknown', 'message': 'MMayers'}
+2023-11-12 21:54:38 [info     ] - Step 3: Check that user not found:  username=MMayers
+2023-11-12 21:54:39 [info     ] Send DELETE request:           request_url=https://petstore.swagger.io/v2/user/MMayers
+2023-11-12 21:54:39 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'}
+2023-11-12 21:54:39 [info     ] With body:                     body=None
+2023-11-12 21:54:39 [info     ] Response status code:          status_code=200
+2023-11-12 21:54:39 [info     ] Response body:                 response_body={'code': 200, 'type': 'unknown', 'message': 'MMayers'}
+2023-11-12 21:54:39 [error    ] - Bug:                         e=AssertionError('Expected <200> to be equal to <404>, but was not.')
+2023-11-12 21:54:39 [info     ] ====================================================================================================
+2023-11-12 21:54:39 [info     ] Start test should_update_user()
+2023-11-12 21:54:39 [info     ] ----------------------------------------------------------------------------------------------------
+2023-11-12 21:54:39 [info     ] Create random user from csv file: user={"username": "MMayers", "email": "fromhellwithlove@gmail.com", "password": "311021"}
+2023-11-12 21:54:39 [info     ] - Step 1: Create user
+2023-11-12 21:54:39 [info     ] Send POST request:             request_url=https://petstore.swagger.io/v2/user
+2023-11-12 21:54:39 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '84'}
+2023-11-12 21:54:39 [info     ] With body:                     body={"username": "MMayers", "email": "fromhellwithlove@gmail.com", "password": "311021"}
+2023-11-12 21:54:39 [info     ] Response status code:          status_code=200
+2023-11-12 21:54:39 [info     ] Response body:                 response_body={'code': 200, 'type': 'unknown', 'message': '9223372036854760480'}
+2023-11-12 21:54:39 [info     ] - Step 2: Update user:         new_user={"username": "Ilon", "email": "blockhain@cc.com", "password": "password"}
+2023-11-12 21:54:40 [info     ] Send PUT request:              request_url=https://petstore.swagger.io/v2/user/MMayers
+2023-11-12 21:54:40 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '73'}
+2023-11-12 21:54:40 [info     ] With body:                     body={"username": "Ilon", "email": "blockhain@cc.com", "password": "password"}
+2023-11-12 21:54:40 [info     ] Response status code:          status_code=200
+2023-11-12 21:54:40 [info     ] Response body:                 response_body={'code': 200, 'type': 'unknown', 'message': '9223372036854760481'}
+2023-11-12 21:54:40 [info     ] - Step 3: Check that user updated:  expected_user={'username': 'Ilon', 'email': 'blockhain@cc.com', 'password': 'password'}
+2023-11-12 21:54:40 [info     ] Send GET request:              request_url=https://petstore.swagger.io/v2/user/Ilon
+2023-11-12 21:54:40 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2023-11-12 21:54:40 [info     ] With body:                     body=None
+2023-11-12 21:54:40 [info     ] Response status code:          status_code=200
+2023-11-12 21:54:40 [info     ] Response body:                 response_body={'id': 9223372036854759741, 'username': 'Ilon', 'email': 'blockhain@cc.com', 'password': 'password', 'userStatus': 0}

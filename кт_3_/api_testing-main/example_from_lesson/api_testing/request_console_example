@@ -1,0 +1,28 @@
+'GET example'
+'https://petstore.swagger.io/v2/pet/1'
+200
+'OK'
+'{"id":1,"category":{"id":1,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":1,"name":"string"}],"status":"available"}'
+{'category': {'id': 1, 'name': 'string'},
+ 'id': 1,
+ 'name': 'doggie',
+ 'photoUrls': ['string'],
+ 'status': 'available',
+ 'tags': [{'id': 1, 'name': 'string'}]}
+'**********'
+'POST example'
+200
+'OK'
+'GET 1'
+200
+'{"id":1,"category":{"id":1,"name":"string"},"name":"Barsic","photoUrls":["string"],"tags":[{"id":1,"name":"string"}],"status":"available"}'
+'**********'
+'DELETE example'
+200
+'OK'
+'{"code":200,"type":"unknown","message":"1"}'
+'GET 1'
+404
+'Not Found'
+'{"code":1,"type":"error","message":"Pet not found"}'
+'**********'

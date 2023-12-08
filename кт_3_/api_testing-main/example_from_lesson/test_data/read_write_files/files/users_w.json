@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "login": "Alisa",
+            "email": "alisa.april.one@gmail.ru"
+        },
+        {
+            "login": "Plaksa",
+            "email": "cat@gmail.ru"
+        },
+        {
+            "login": "MMayers",
+            "email": "fromhellwithlove@gmail.com"
+        }
+    ]
+}

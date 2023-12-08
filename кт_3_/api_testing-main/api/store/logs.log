@@ -1,0 +1,52 @@
+2023-11-12 21:51:15 [info     ] ====================================================================================================
+2023-11-12 21:51:15 [info     ] Start test should_create_order()
+2023-11-12 21:51:15 [info     ] ----------------------------------------------------------------------------------------------------
+2023-11-12 21:51:15 [info     ] Create random store:           random_store={'id': 1, 'petId': 5, 'quantity': 9, 'shipDate': '2023-11-12T18:51:15', 'status': 'placed', 'complete': False}
+2023-11-12 21:51:15 [info     ] - Step 1: Create order:        store={'id': 1, 'petId': 5, 'quantity': 9, 'shipDate': '2023-11-12T18:51:15', 'status': 'placed', 'complete': False}
+2023-11-12 21:51:16 [info     ] Send POST request:             request_url=https://petstore.swagger.io/v2/store/order
+2023-11-12 21:51:16 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '110'}
+2023-11-12 21:51:16 [info     ] With body:                     body={'id': 1, 'petId': 5, 'quantity': 9, 'shipDate': '2023-11-12T18:51:15', 'status': 'placed', 'complete': False}
+2023-11-12 21:51:16 [info     ] Response status code:          status_code=200
+2023-11-12 21:51:16 [info     ] Response body:                 response_body={'id': 1, 'petId': 5, 'quantity': 9, 'shipDate': '2023-11-12T18:51:15.000+0000', 'status': 'placed', 'complete': False}
+2023-11-12 21:51:16 [error    ] - Bug (wrong milliseconds):    e=AssertionError("Expected <{.., 'shipDate': '2023-11-12T18:51:15.000+0000'}> to be equal to <{.., 'shipDate': '2023-11-12T18:51:15'}>, but was not.")
+2023-11-12 21:51:16 [info     ] ====================================================================================================
+2023-11-12 21:51:16 [info     ] Start test should_get_error_when_not_found_order()
+2023-11-12 21:51:16 [info     ] ----------------------------------------------------------------------------------------------------
+2023-11-12 21:51:16 [info     ] - Check error when pet ID > 10: pet_id=11
+2023-11-12 21:51:16 [info     ] Send GET request:              request_url=https://petstore.swagger.io/v2/store/order/11
+2023-11-12 21:51:16 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2023-11-12 21:51:16 [info     ] With body:                     body=None
+2023-11-12 21:51:16 [info     ] Response status code:          status_code=404
+2023-11-12 21:51:16 [info     ] Response body:                 response_body={'code': 1, 'type': 'error', 'message': 'Order not found'}
+2023-11-12 21:51:16 [info     ] ====================================================================================================
+2023-11-12 21:51:16 [info     ] Start test should_get_order()
+2023-11-12 21:51:16 [info     ] ----------------------------------------------------------------------------------------------------
+2023-11-12 21:51:16 [info     ] Create random store:           random_store={'id': 81, 'petId': 4, 'quantity': 6, 'shipDate': '2023-11-12T18:51:16', 'status': 'placed', 'complete': True}
+2023-11-12 21:51:16 [info     ] - Step 1: Create order:        store={'id': 81, 'petId': 4, 'quantity': 6, 'shipDate': '2023-11-12T18:51:16', 'status': 'placed', 'complete': True}
+2023-11-12 21:51:17 [info     ] Send POST request:             request_url=https://petstore.swagger.io/v2/store/order
+2023-11-12 21:51:17 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '110'}
+2023-11-12 21:51:17 [info     ] With body:                     body={'id': 81, 'petId': 4, 'quantity': 6, 'shipDate': '2023-11-12T18:51:16', 'status': 'placed', 'complete': True}
+2023-11-12 21:51:17 [info     ] Response status code:          status_code=200
+2023-11-12 21:51:17 [info     ] Response body:                 response_body={'id': 81, 'petId': 4, 'quantity': 6, 'shipDate': '2023-11-12T18:51:16.000+0000', 'status': 'placed', 'complete': True}
+2023-11-12 21:51:17 [info     ] - Check can get order:         order_id=81
+2023-11-12 21:51:18 [info     ] Send GET request:              request_url=https://petstore.swagger.io/v2/store/order/81
+2023-11-12 21:51:18 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2023-11-12 21:51:18 [info     ] With body:                     body=None
+2023-11-12 21:51:18 [info     ] Response status code:          status_code=200
+2023-11-12 21:51:18 [info     ] Response body:                 response_body={'id': 81, 'petId': 4, 'quantity': 6, 'shipDate': '2023-11-12T18:51:16.000+0000', 'status': 'placed', 'complete': True}
+2023-11-12 21:51:18 [info     ] ====================================================================================================
+2023-11-12 21:51:18 [info     ] Start test should_delete_order()
+2023-11-12 21:51:18 [info     ] ----------------------------------------------------------------------------------------------------
+2023-11-12 21:51:18 [info     ] Create random store:           random_store={'id': 32, 'petId': 5, 'quantity': 6, 'shipDate': '2023-11-12T18:51:18', 'status': 'placed', 'complete': False}
+2023-11-12 21:51:18 [info     ] - Step 1: Create order
+2023-11-12 21:51:18 [info     ] Send POST request:             request_url=https://petstore.swagger.io/v2/store/order
+2023-11-12 21:51:18 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '111'}
+2023-11-12 21:51:18 [info     ] With body:                     body={'id': 32, 'petId': 5, 'quantity': 6, 'shipDate': '2023-11-12T18:51:18', 'status': 'placed', 'complete': False}
+2023-11-12 21:51:18 [info     ] Response status code:          status_code=200
+2023-11-12 21:51:18 [info     ] Response body:                 response_body={'id': 32, 'petId': 5, 'quantity': 6, 'shipDate': '2023-11-12T18:51:18.000+0000', 'status': 'placed', 'complete': False}
+2023-11-12 21:51:18 [info     ] - Step 2: Delete order:        store={'id': 32, 'petId': 5, 'quantity': 6, 'shipDate': '2023-11-12T18:51:18', 'status': 'placed', 'complete': False}
+2023-11-12 21:51:19 [info     ] Send DELETE request:           request_url=https://petstore.swagger.io/v2/store/order/32
+2023-11-12 21:51:19 [info     ] Request headers:               request_headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'}
+2023-11-12 21:51:19 [info     ] With body:                     body=None
+2023-11-12 21:51:19 [info     ] Response status code:          status_code=200
+2023-11-12 21:51:19 [info     ] Response body:                 response_body={'code': 200, 'type': 'unknown', 'message': '32'}
